@@ -26,7 +26,6 @@ class RijectPController extends Controller
 
         $rekapBox = Totalbox::select(DB::raw('DATE(tgl_total) as tanggal, MAX(ttl_box) as total'))
             ->groupBy('tgl_total')
-            // ->latest('tanggal') // Mengurutkan berdasarkan tanggal terbaru
             ->get();
 
         return view('rijectp', ['rekapBox' => $rekapBox]);

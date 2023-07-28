@@ -2,17 +2,14 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Damage_reports;
+use App\Models\Penjumlahan;
 use Illuminate\Http\Request;
-use Illuminate\Routing\Controller;
-use Illuminate\Support\Facades\DB;
-use Illuminate\Database\Eloquent\Model;
-use Illuminate\Support\Collection;
-use Illuminate\Support\Carbon;
 
-
-class GlassController extends Controller
+class ApiController extends Controller
 {
+    /**
+     * Display a listing of the resource.
+     */
     public function index()
     {
     }
@@ -22,18 +19,18 @@ class GlassController extends Controller
      */
     public function store(Request $request)
     {
-        $tgl = Date('Y-m-d');
 
-        $data = DB::table('damage_reports')
-            ->whereDate('date_time', $tgl)
-            ->pluck('class_name')
-            ->countBy();
+        $tanggal = $request->input('tgl');
 
-        return view('glass', ['data' => $data, 'tgl' => $tgl]);
+        $events = Penjumlahan::whereDate('tgl', $tanggal)
+            ->get();
+
+        if ($events->isEmpty()) {
+            return response()->json(['message' => 'Tidak ada acara pada tanggal ini'], 404);
+        }
+
+        return response()->json($events, 200);
     }
-
-
-
 
     /**
      * Display the specified resource.

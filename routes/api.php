@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\ApiController;
 use App\Http\Controllers\BoxController;
 use App\Http\Controllers\RijectController;
 use Illuminate\Http\Request;
@@ -20,6 +21,8 @@ Route::get('/', [IndexController::class, 'store'])->name('index.store');
 
 Route::get('/box', [BoxController::class, 'store'])->name('box.store');
 Route::post('/box', [BoxController::class, 'index'])->name('box.index');
+
+Route::get('/events/by-date', [ApiController::class, 'store']);
 
 // Route::get('/box/{id}',function($id)
 // {

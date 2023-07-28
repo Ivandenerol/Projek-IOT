@@ -62,8 +62,8 @@ class FormBoxController extends Controller
      */
     public function update($date)
     {
-        $data = Totalbox::find($date);
-        Totalbox::whereDate('tgl_total', $date)->update(['ttl_total' => $data]);
+        // $data = Totalbox::find($date);
+        // Totalbox::whereDate('tgl_total', $date)->update(['ttl_total' => $data]);
     }
 
     /**

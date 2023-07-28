@@ -237,7 +237,7 @@
 						alt=""
 						class="light-logo"
 					/> -->
-					<h4><span>APILASTIK</span></h4>
+					<h4><span>SCAPSA</span></h4>
 				</a>
 				<div class="close-sidebar" data-toggle="left-sidebar-close">
 					<i class="ion-close-round"></i>
@@ -271,12 +271,12 @@
 						<li class="dropdown">
 							<a href="javascript:;" class="dropdown-toggle">
 								<span class="micon bi bi-file-earmark-text"></span
-								><span class="mtext">Rekap</span>
+								><span class="mtext">Recap</span>
 							</a>
 							<ul class="submenu">
-								<li><a href="/glassp">Rekap Glass</a></li>
-								<li><a href="/boxp">Rekap Return Box</a></li>
-								<li><a href="/rijectp">Rekap Box </a></li>
+								<li><a href="/glassp">Recap Glass</a></li>
+								<li><a href="/boxp">Recap Return Box</a></li>
+								<li><a href="/rijectp">Recap Box </a></li>
 							</ul>
 						</li>
 						<li>

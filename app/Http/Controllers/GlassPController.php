@@ -14,10 +14,20 @@ class GlassPController extends Controller
     /**
      * Display a listing of the resource.
      */
-    public function index(Request $request)
+    public function index()
     {
-        $rekapGlass = Damage_reports::all();
-        return view('glassp', ['rekapGlass' => $rekapGlass]);
+        $startOfWeek = now()->startOfWeek(); // Mengambil tanggal awal minggu ini
+        $endOfWeek = now()->endOfWeek(); // Mengambil tanggal akhir minggu ini
+
+
+        $gp = DB::table('damage_reports')
+            ->whereBetween('date_time', [$startOfWeek, $endOfWeek])
+            ->pluck('class_name')
+            ->countBy();
+
+        // $data = Post::get()->countBy('class_name');
+
+        return view('glassp', ['gp' => $gp, 'tgl' => [$startOfWeek, $endOfWeek]]);
     }
 
     public function total()

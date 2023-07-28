@@ -25,7 +25,7 @@ class RijectController extends Controller
 
         // $riject = Totalbox::select(DB::raw('DATE(tgl_total) as tanggal, MAX(ttl_box) as nilai'))
         //     ->groupBy('tgl_total')
-        //     ->latest('tanggal') // Mengurutkan berdasarkan tanggal terbaru
+        //     ->latest('tanggal') 
         //     ->get();
 
         // return view('riject', ['data' => $riject]);

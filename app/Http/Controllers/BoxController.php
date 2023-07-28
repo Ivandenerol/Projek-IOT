@@ -32,10 +32,6 @@ class BoxController extends Controller
         $isibox = 48;
         $t = Totalbox::where('tgl_total', $tgl)->max('ttl_box');
 
-        // $t = Totalbox::select(DB::raw('DATE(tgl_total) as tanggal, MAX(ttl_box) as total'))
-        //     ->groupBy('tgl_total')
-        //     ->get();
-
 
         // memanggil sisa gelas pada tanggal sebelumnya
         $yesterday = today()->subDay();
